@@ -1,0 +1,18 @@
+tasks:
+  - init: |
+      docker-compose pull
+  - command: |
+      docker-compose up
+
+
+ports:
+  - name: api
+    port: 8000
+    onOpen: ignore
+  - name: ui
+    port: 5000
+    onOpen: open-browser
+    visibility: public
+  - name: db
+    port: 5432
+    onOpen: ignore
